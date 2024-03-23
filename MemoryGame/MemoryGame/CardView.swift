@@ -19,17 +19,18 @@ struct CardView: View {
     
     var body: some View {
         ZStack{
-            
+                
             // Card background
             RoundedRectangle(cornerRadius: 10.0)
-                .fill(isSelected ? Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.15) : .blue)
+                .fill(isSelected ? (Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.15)) : (card.isMatched ? Color.white : Color.blue))
                 .frame(width: 115, height: 167)
                 .padding()
                 .rotation3DEffect(
                     .degrees(card.isShowingBlank ? 0 : 180), axis: (x: 0.0, y: 1.0, z: 0.0))
             
             // Card text
-            Text(card.isShowingBlank ? "" : card.emoji)
+//            Text(card.isShowingBlank ? "" : card.emoji)
+            Text(card.isShowingBlank ? "" : (card.isMatched ? "" : card.emoji))
                 .font(.title)
                 .foregroundStyle(.white)
                 .padding()

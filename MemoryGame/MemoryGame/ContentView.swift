@@ -25,11 +25,34 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Reset Game") { // <-- Reset button with title and action
-                cards = Card.mockedCards.shuffled() // <-- Reset the cards array and shuffles
-                selectedIndices = [] // <-- set selectedIndices to empty after reset
-//                cards[cards.].isMatched = false // <--
+            HStack{
+                
+                Button("Choose Size") { // <-- Reset button with title and action
+                    cards = Card.mockedCards.shuffled() // <-- Reset the cards array and shuffles
+                    selectedIndices = [] // <-- set selectedIndices to empty after reset
+                    //                cards[cards.].isMatched = false // <--
+                }
+                .padding(10)
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .cornerRadius(20)
+                .font(.headline)
+                
+                Spacer()
+                
+                Button("Reset Game") { // <-- Reset button with title and action
+                    cards = Card.mockedCards.shuffled() // <-- Reset the cards array and shuffles
+                    selectedIndices = [] // <-- set selectedIndices to empty after reset
+                    //                cards[cards.].isMatched = false // <--
+                }
+                .padding(10)
+                .foregroundColor(.white)
+                .background(Color.gray)
+                .cornerRadius(20)
+                .font(.headline)
             }
+            .padding(20)
+            
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
                     //                ForEach(0..<cards.count, id: \.self) { index in

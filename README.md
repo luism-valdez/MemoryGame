@@ -51,7 +51,7 @@ The following **additional** features are implemented:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I initially struggled to get the matching cards to be identified and then disappeared. It came down to getting my code organized so that the hierarchy is correct to get the correct logic.
 
 ## License
 
